@@ -25,7 +25,7 @@ export default function Countdown(props: {target: string}){
         },2000);
         return() => clearInterval(timer);
     },[props.target]);
-    console.debug(target);
+
     if( now > target ){
         return <h3>{((Math.floor(Math.random()) * 2) === 1)? "🥯" : "🍞"}</h3 >
     }
