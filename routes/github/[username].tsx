@@ -1,8 +1,9 @@
 /** @jsx  */
 import { HeadProps } from "$fresh/runtime.ts"
 import { Handlers, PageProps } from "$fresh/server.ts"
-import { NodeWithTypeArguments, PropertySignature } from "https://deno.land/x/ts_morph@17.0.1/ts_morph.js";
+import { JsxAttribute, NodeWithTypeArguments, PropertySignature } from "https://deno.land/x/ts_morph@17.0.1/ts_morph.js";
 import Countdown from "../../islands/Countdown.tsx";
+import { Attributes } from "preact"
 
 interface User {
     login: string;
@@ -29,7 +30,7 @@ export default function Page({data}: PageProps<User | null>) {
     }
 
     return(
-        <div>
+        <div className="container mx-auto my-4 max-w-md">
             <img src={data.avatar_url} width={64} height={64} />
             <h1>{data.name}</h1>
             <p>{data.login}</p>
